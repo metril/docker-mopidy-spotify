@@ -7,7 +7,7 @@ COPY mopidy.conf /var/lib/mopidy/.config/mopidy/mopidy.conf
 
 # Default icecast configuration
 COPY icecast.xml /usr/share/icecast/icecast.xml
-COPY silence.mp3 /usr/share/icecast/web/silence.mp3
+COPY 500-milliseconds-of-silence.mp3 /usr/share/icecast/web/silence.mp3
 
 # Official Mopidy install for Debian/Ubuntu along with some extensions
 # (see https://docs.mopidy.com/en/latest/installation/debian/ )
