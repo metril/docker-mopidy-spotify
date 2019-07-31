@@ -23,6 +23,7 @@ RUN set -ex \
  && apt-key add /tmp/mopidy.gpg \
  && apt-get update \
  && DEBIAN_FRONTEND=noninteractive apt-get install -y \
+        python-pykka \
         mopidy \
         mopidy-spotify \
         mopidy-spotify-tunigo \
