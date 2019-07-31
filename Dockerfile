@@ -1,6 +1,6 @@
-FROM debian:jessie
+FROM debian:latest
 
-MAINTAINER Tres Trantham <tres@trestrantham.com>
+MAINTAINER Me
 
 # Default mopidy configuration
 COPY mopidy.conf /var/lib/mopidy/.config/mopidy/mopidy.conf
