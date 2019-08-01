@@ -24,7 +24,7 @@ RUN set -ex \
  && curl -L https://bootstrap.pypa.io/get-pip.py | python - \
  && pip install -U six \
  && pip install \
-        Mopidy-Spotmop \
+        Mopidy-Iris \
  && apt-get purge --auto-remove -y \
         curl \
         gcc \
