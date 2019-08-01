@@ -11,8 +11,10 @@ COPY 500-milliseconds-of-silence.mp3 /usr/share/icecast/web/silence.mp3
 
 # Official Mopidy install for Debian/Ubuntu along with some extensions
 # (see https://docs.mopidy.com/en/latest/installation/debian/ )
+
 RUN set -ex \
  && apt-get update \
+ && apt-get install wget \
  && wget -q -O - https://apt.mopidy.com/mopidy.gpg | apt-key add - \
  && wget -q -O /etc/apt/sources.list.d/mopidy.list https://apt.mopidy.com/stretch.list \
  && apt-get update \
