@@ -19,7 +19,7 @@ RUN set -ex \
  && wget -q -O - https://apt.mopidy.com/mopidy.gpg | apt-key add - \
  && wget -q -O /etc/apt/sources.list.d/mopidy.list https://apt.mopidy.com/stretch.list \
  && apt-get update \
- && apt-get install mopidy \
+ && apt-get install -y mopidy \
  && curl -L https://bootstrap.pypa.io/get-pip.py | python - \
  && pip install -U six \
  && pip install \
