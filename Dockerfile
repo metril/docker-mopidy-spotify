@@ -1,4 +1,4 @@
-FROM debian:buster
+FROM debian:stretch
 
 MAINTAINER Me
 
@@ -13,21 +13,10 @@ COPY 500-milliseconds-of-silence.mp3 /usr/share/icecast/web/silence.mp3
 # (see https://docs.mopidy.com/en/latest/installation/debian/ )
 RUN set -ex \
  && apt-get update \
- && DEBIAN_FRONTEND=noninteractive apt-get install -y --fix-missing \
-        gcc \
-        curl \
-        python-crypto \
-        gstreamer1.0 \
- && curl -L https://apt.mopidy.com/mopidy.gpg -o /tmp/mopidy.gpg \
- && curl -L https://apt.mopidy.com/mopidy.list -o /etc/apt/sources.list.d/mopidy.list \
- && apt-key add /tmp/mopidy.gpg \
- && apt-get update \
- && DEBIAN_FRONTEND=noninteractive apt-get install -y \
-        python-pykka \
-        sphinx-rtd-theme-common \
-        mopidy \
-        mopidy-spotify \
-        mopidy-spotify-tunigo \
+ && wget -q -O - https://apt.mopidy.com/mopidy.gpg | sudo apt-key add - \
+ && sudo wget -q -O /etc/apt/sources.list.d/mopidy.list https://apt.mopidy.com/stretch.list
+ && sudo apt-get update \
+ && sudo apt-get install mopidy \
  && curl -L https://bootstrap.pypa.io/get-pip.py | python - \
  && pip install -U six \
  && pip install \
