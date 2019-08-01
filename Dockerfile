@@ -24,6 +24,7 @@ RUN set -ex \
  && apt-get update \
  && DEBIAN_FRONTEND=noninteractive apt-get install -y \
         python-pykka \
+        sphinx-rtd-theme-common \
         mopidy \
         mopidy-spotify \
         mopidy-spotify-tunigo \
