@@ -14,7 +14,7 @@ COPY 500-milliseconds-of-silence.mp3 /usr/share/icecast/web/silence.mp3
 
 RUN set -ex \
  && apt-get update \
- && apt-get install -U wget \
+ && apt-get install -y wget \
  && wget -q -O - https://apt.mopidy.com/mopidy.gpg | apt-key add - \
  && wget -q -O /etc/apt/sources.list.d/mopidy.list https://apt.mopidy.com/stretch.list \
  && apt-get update \
